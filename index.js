@@ -1,13 +1,14 @@
+var firebase = require('firebase-admin');
 (function() {
 
     //Initializing Firebase
     const config = {
-        apiKey: "AIzaSyAb0lZGuafGwHIfgOmdm-oHj90X1ifsUSo",
+        apiKey: "AIzaSyAx6-Uf6XelwwNdQ8uHxq8xunBB9QuEKDc",
         authDomain: "mhacks-project-15030.firebaseapp.com",
         databaseURL: "https://console.firebase.google.com/project/mhacks-project-15030/database/firestore/data~2F",
         storageBucket: "mhacks-project-15030",
 
-    };
+    }),
     firebase.initializeApp(config);
     
     //Get elements
