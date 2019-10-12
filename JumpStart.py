@@ -1,8 +1,8 @@
 import csv
-def checkForHelp():
-    city = "Ann Arbor"
+def checkForHelp(city):
+  
     #city= input("What city are you in right now? ")
-    print("Where are you in ", city, "?")
+    #print("Where are you in ", city, "?")
     #location = input()
     lst_close_people = []
     #csvfile = open('test.csv','r',newline='') 
@@ -12,18 +12,20 @@ def checkForHelp():
         next(csv_reader,None)
         
         for row in csv_reader:
-            row_l = row[0].split("\t")
+           # print(row)
+            #row_l = row[0].split("\t")
            # print(row_l)
-            list_people.append(row_l)
+            list_people.append(row)
     
     #print(list_people)
     counter = 0
-    print("The following people have been emailed to come help you: ")
+    print("The following people have been emailed to come help you: ")  
+    
     for person in list_people:
         
         if (person[2] == city):
             counter += 1
-            #print("Name:", person[0], " Email:", person[1])
+            print("Name:", person[0], " Email:", person[1])
             lst_close_people.append(person[1])
     return lst_close_people
 def createAccount():
@@ -708,7 +710,7 @@ def email(address):
             sender_email, receiver_email, message.as_string()
         )     
 #createAccount()
-email_lst = checkForHelp()
+email_lst = checkForHelp("Ann Arbor")
 for email_to_send in email_lst:
     
     email(email_to_send)
