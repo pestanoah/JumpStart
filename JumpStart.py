@@ -28,16 +28,7 @@ def checkForHelp(city):
             print("Name:", person[0], " Email:", person[1])
             lst_close_people.append(person[1])
     return lst_close_people
-def createAccount():
-    name = input("What is your name?")
-    email = input("What is your email?")
-    city = input("What is your city?")
-    
-    with open('data.csv', mode='w') as data_file:
-        data_w = csv.writer(data_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        
-        data_w.writerow([name,email,city])
-        
+
 def email(address):
     import smtplib, ssl
     from email.mime.text import MIMEText
