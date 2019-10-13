@@ -701,7 +701,8 @@ def email(address):
             sender_email, receiver_email, message.as_string()
         )     
 #createAccount()
-email_lst = checkForHelp("Ann Arbor")
+current_city = input("What city are you in?")
+email_lst = checkForHelp(current_city)
 for email_to_send in email_lst:
     
     email(email_to_send)
